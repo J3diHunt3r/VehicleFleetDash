@@ -2,7 +2,7 @@
 
 import React from "react";
 import { IconType } from "react-icons";
-import { FiHome, FiUsers } from "react-icons/fi";
+import { FiHome, FiUsers, FiCog } from "react-icons/fi";
 
 interface RouteSelectProps {
   onRouteChange: (route: string) => void; // Function to change the route
@@ -24,6 +24,12 @@ export const RouteSelect = ({ onRouteChange, selectedRoute }: RouteSelectProps) 
         selected={selectedRoute === "team"} // Check if this route is selected
         onClick={() => onRouteChange("team")}
       />
+      <Route
+              Icon={FiUsers}
+              title="Settings"
+              selected={selectedRoute === "settings"} // Check if this route is selected
+              onClick={() => onRouteChange("settings")}
+            />
     </div>
   );
 };

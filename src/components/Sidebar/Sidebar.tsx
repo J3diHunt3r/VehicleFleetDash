@@ -9,18 +9,20 @@ import { Plan } from "./Plan";
 interface SidebarProps {
   onRouteChange: (route: string) => void; // onRouteChange function passed as a prop
   selectedRoute: string; // The selected route
+  user: { name: string; email: string; avatarUrl: string }; // Add user prop
+
 }
 
-export const Sidebar = ({ onRouteChange,selectedRoute }: SidebarProps) => {
+export const Sidebar = ({ onRouteChange,selectedRoute, user }: SidebarProps) => {
   return (
     <div className="sidebar">
       <div className="overflow-y-scroll sticky top-4 h-[calc(100vh-32px-48px)]">
         {/* Include AccountToggle and Search here */}
-        <AccountToggle />
+        <AccountToggle user={user} />
         <Search />
 
         {/* Pass onRouteChange to RouteSelect */}
-        <RouteSelect onRouteChange={onRouteChange} selectedRoute={selectedRoute} />
+        <RouteSelect onRouteChange={onRouteChange} selectedRoute={selectedRoute} user={user} />
       </div>
 
       {/* Plan Component */}

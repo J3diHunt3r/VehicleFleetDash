@@ -12,6 +12,12 @@ const isDateInRange = (date: string, rangeInDays: number) => {
   return diffDays <= rangeInDays && diffDays >= 0;
 };
 
+const handleNotify = (vehicle) => {
+  // Your logic to notify the user, like showing an alert or sending a notification
+  alert(`Notifying user for vehicle: ${vehicle.rego}`);
+};
+
+
 export const StatCards = () => {
   const vehiclesDueForRego = vehicleData.filter(v => isDateInRange(v.nextRegoDue, 14));
   const vehiclesDueForService = vehicleData.filter(v => isDateInRange(v.nextService, 30));
@@ -100,12 +106,21 @@ const Card = ({
             <h2 className="text-lg font-semibold mb-4">{title}</h2>
             <ul className="space-y-2 text-sm">
               {vehicles.map((vehicle, idx) => (
-                <li key={idx} className="border-b pb-2">
-                  <strong>{vehicle.rego}</strong> – {vehicle.make} {vehicle.model} ({vehicle.year})<br />
-                  <span className="text-stone-500 text-xs">
-                    Renter: {vehicle.renterName}
-                  </span>
+                <li key={idx} className="border-b pb-2 flex justify-between items-center">
+                  <div>
+                    <strong>{vehicle.rego}</strong> – {vehicle.make} {vehicle.model} ({vehicle.year})<br />
+                    <span className="text-stone-500 text-xs">
+                      Renter: {vehicle.renterName}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => handleNotify(vehicle)} // Handle the button click
+                    className="bg-green-400 text-white px-4 py-2 text-xs rounded hover:bg-violet-700"
+                  >
+                    Notify User
+                  </button>
                 </li>
+
               ))}
             </ul>
 

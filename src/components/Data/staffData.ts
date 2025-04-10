@@ -1,4 +1,5 @@
 // src/Data/staff.ts
+
 export const staffRoles = [
 "Manager",
 "Developer",
@@ -8,7 +9,7 @@ export const staffRoles = [
 "Sales",
 ];
 
-// Example of staff data
+// Example of staff data with passwords (for demo only — hash passwords in real apps!)
 export const staffData = [
 {
 id: "ST1001",
@@ -17,6 +18,7 @@ surname: "Doe",
 role: "Manager",
 email: "john.doe@example.com",
 mobile: "+1234567890",
+password: "john123",
 },
 {
 id: "ST1002",
@@ -25,6 +27,7 @@ surname: "Smith",
 role: "Developer",
 email: "jane.smith@example.com",
 mobile: "+0987654321",
+password: "jane123",
 },
 {
 id: "ST1003",
@@ -33,6 +36,7 @@ surname: "Johnson",
 role: "Designer",
 email: "mark.johnson@example.com",
 mobile: "+1122334455",
+password: "mark123",
 },
 {
 id: "ST1004",
@@ -41,6 +45,7 @@ surname: "Brown",
 role: "Support",
 email: "emily.brown@example.com",
 mobile: "+1234509876",
+password: "emily123",
 },
 {
 id: "ST1005",
@@ -49,6 +54,7 @@ surname: "Williams",
 role: "HR",
 email: "alice.williams@example.com",
 mobile: "+1223344556",
+password: "alice123",
 },
 {
 id: "ST1006",
@@ -57,6 +63,7 @@ surname: "Davis",
 role: "Developer",
 email: "bob.davis@example.com",
 mobile: "+1334455667",
+password: "bob123",
 },
 {
 id: "ST1007",
@@ -65,6 +72,7 @@ surname: "Miller",
 role: "Sales",
 email: "charlie.miller@example.com",
 mobile: "+1445566778",
+password: "charlie123",
 },
 {
 id: "ST1008",
@@ -73,5 +81,6 @@ surname: "Taylor",
 role: "Designer",
 email: "olivia.taylor@example.com",
 mobile: "+1556677889",
+password: "olivia123",
 },
 ];

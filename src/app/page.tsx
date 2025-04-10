@@ -1,28 +1,39 @@
-// Home.tsx
-
 'use client';
 import React, { useState } from "react";
-import { Sidebar } from "@/components/Sidebar/Sidebar"; // Sidebar Component
-import { Dashboard } from "@/components/Dashboard/Dashboard"; // Dashboard Component
-import { Team } from "@/components/Team/Team"; // Team Component
+import { Sidebar } from "@/components/Sidebar/Sidebar";
+import { Dashboard } from "@/components/Dashboard/Dashboard";
+import { Team } from "@/components/Team/Team";
+import { Settings } from "@/components/Settings/Settings";
+import { LoginPage } from "@/components/Auth/Login";
+import { TopBar } from "@/components/Dashboard/TopBar";
+import { staffData } from "@/components/Data/staff"; // adjust path as needed
 
 export default function Home() {
-  const [selectedRoute, setSelectedRoute] = useState<string>("dashboard");
+  const [selectedRoute, setSelectedRoute] = useState("dashboard");
+  const [user, setUser] = useState<any | null>(null); // 💡 Track logged in user
 
-  // This function is passed down to Sidebar
-  const handleRouteChange = (route: string) => {
-    setSelectedRoute(route); // Update the selected route
+  const handleLogin = (loggedInUser: any) => {
+    setUser(loggedInUser);
   };
+
+  const handleRouteChange = (route: string) => {
+    setSelectedRoute(route);
+  };
+
+  // Show login if no user
+  if (!user) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
 
   return (
     <main className="grid gap-4 p-4 grid-cols-[220px,_1fr]">
-      {/* Pass selectedRoute to Sidebar */}
       <Sidebar onRouteChange={handleRouteChange} selectedRoute={selectedRoute} />
 
-      {/* Conditional Rendering based on selectedRoute */}
-      <div className="content-area">
+      <div>
+        <TopBar user={user} /> {/* 🔼 Pass logged-in user */}
         {selectedRoute === "dashboard" && <Dashboard />}
         {selectedRoute === "team" && <Team />}
+        {selectedRoute === "settings" && <Settings user={user} />} {/* Pass user to Settings */}
       </div>
     </main>
   );
