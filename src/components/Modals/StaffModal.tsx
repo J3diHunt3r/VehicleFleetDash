@@ -1,3 +1,7 @@
+'use client';
+import React, { useState } from 'react';
+
+
 const StaffModal = ({ isEditing, staff, onClose, onSave }: { isEditing: boolean; staff: any; onClose: () => void; onSave: (staff: any) => void; }) => {
   const [form, setForm] = useState(staff || {
     name: "",

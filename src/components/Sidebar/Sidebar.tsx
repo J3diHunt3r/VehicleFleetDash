@@ -18,11 +18,11 @@ export const Sidebar = ({ onRouteChange,selectedRoute, user }: SidebarProps) => 
     <div className="sidebar">
       <div className="overflow-y-scroll sticky top-4 h-[calc(100vh-32px-48px)]">
         {/* Include AccountToggle and Search here */}
-        <AccountToggle user={user} />
+        <AccountToggle/>
         <Search />
 
         {/* Pass onRouteChange to RouteSelect */}
-        <RouteSelect onRouteChange={onRouteChange} selectedRoute={selectedRoute} user={user} />
+        <RouteSelect onRouteChange={onRouteChange} selectedRoute={selectedRoute} />
       </div>
 
       {/* Plan Component */}

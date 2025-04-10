@@ -4,26 +4,25 @@ import { FcGoogle } from "react-icons/fc";
 import { ForgotPasswordModal } from "../Modals/ForgotPasswordModal";
 import { staffData } from "../Data/staffData"; // ✅ Import staff data
 
-export const LoginPage = ({ onLogin }: { onLogin: () => void }) => {
+export const LoginPage = ({ onLogin }: { onLogin: (loggedInUser: any) => void }) => { // Specify the function signature correctly
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [error, setError] = useState<string | null>(null); // 🛑 For error messages
 
-const handleLogin = () => {
-  const foundUser = staffData.find(
-    (user) => user.email === email && user.password === password
-  );
+  const handleLogin = () => {
+    const foundUser = staffData.find(
+      (user) => user.email === email && user.password === password
+    );
 
-  if (foundUser) {
-    setError(null);
-    onLogin(foundUser); // ✅ Pass the whole user object back
-  } else {
-    setError("Invalid email or password");
-  }
-};
-
+    if (foundUser) {
+      setError(null);
+      onLogin(foundUser); // ✅ Pass the whole user object back to the parent
+    } else {
+      setError("Invalid email or password");
+    }
+  };
 
   const handleSendResetEmail = (resetEmail: string) => {
     alert(`Password reset email sent to ${resetEmail}`);

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { IconType } from "react-icons";
-import { FiHome, FiUsers, FiCog } from "react-icons/fi";
+import { FiHome, FiUsers } from "react-icons/fi";
 
 interface RouteSelectProps {
   onRouteChange: (route: string) => void; // Function to change the route

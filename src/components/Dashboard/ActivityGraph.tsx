@@ -11,7 +11,7 @@ import {
   Line,
   LineChart,
 } from "recharts";
-import { vehicleData } from "../data/vehicleData"; // Your vehicle data
+import { vehicleData } from "../Data/vehicleData"; // Your vehicle data
 
 // Format: { name: "Apr 2025", Registration: 2, Service: 3, Rental: 1 }
 const processData = () => {

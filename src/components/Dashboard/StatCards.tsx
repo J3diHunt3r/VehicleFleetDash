@@ -12,7 +12,22 @@ const isDateInRange = (date: string, rangeInDays: number) => {
   return diffDays <= rangeInDays && diffDays >= 0;
 };
 
-const handleNotify = (vehicle) => {
+interface Vehicle {
+  vehicleId: string;
+  rego: string;
+  make: string;
+  model: string;
+  year: string; // If you expect this to be a string, you can keep it as string, otherwise use number
+  nextRegoDue: string; // Date as a string in ISO format
+  renterName: string;
+  licenceNumber: string;
+  licenceExpiry: string; // Date as a string in ISO format
+  rentalExpiry: string; // Date as a string in ISO format
+  nextService: string; // Date as a string in ISO format
+}
+
+
+const handleNotify = (vehicle: Vehicle) => {
   // Your logic to notify the user, like showing an alert or sending a notification
   alert(`Notifying user for vehicle: ${vehicle.rego}`);
 };
