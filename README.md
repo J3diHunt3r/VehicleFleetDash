@@ -1,8 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚗 Vehicle Fleet Dashboard
 
-## Getting Started
+This is a **Next.js** project for managing a vehicle rental fleet. It includes a modern dashboard with key statistics, vehicle management, user notification capabilities, and administrative settings.
 
-First, run the development server:
+---
+
+## 🧪 Getting Started
+
+To run the project locally:
 
 ```bash
 npm run dev
@@ -14,23 +18,111 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📸 Application Pages Overview
 
-## Learn More
+### 🔐 Login Page
 
-To learn more about Next.js, take a look at the following resources:
+![Login Page](public/screens/login.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> A secure authentication screen for users to access the platform.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### 📊 Dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Dashboard](public/screens/dashboard.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> A real-time overview of the vehicle fleet.
+
+**Key Features:**
+- 🚨 Stat cards for upcoming rego, services, and expiring rentals
+- 🔍 Modal view with Notify button
+- 📋 Fleet overview table with edit/delete actions
+
+---
+
+### 👥 Team Management
+
+![Team Management](public/screens/team.png)
+
+> Manage the members who have access to the dashboard.
+
+**Features:**
+- Add or remove team members
+- Assign roles and permissions
+
+---
+
+### ⚙️ Settings
+
+![Settings](public/screens/settings.png)
+
+> Configure preferences and app-wide settings.
+
+**Features:**
+- Update account details
+- Set notification preferences
+- (Coming soon) API & integration settings
+
+---
+
+## 📦 Vehicle Data Structure
+
+Here's an example of the vehicle data managed by the app:
+
+```ts
+{
+  vehicleId: "VH017",
+  rego: "QRS101",
+  make: "Toyota",
+  model: "HiLux",
+  year: "2020",
+  nextRegoDue: "2025-07-01",
+  renterName: "Henry Cook",
+  licenceNumber: "NT1223344",
+  licenceExpiry: "2025-08-20",
+  rentalExpiry: "2025-06-30",
+  nextService: "2025-06-01",
+}
+```
+
+---
+
+## 🔔 Features
+
+- ✅ Responsive dashboard UI (Tailwind CSS)
+- 📈 Stat-based triggers and tracking
+- ✍️ CRUD operations for vehicles
+- 📦 Modal forms for edits and confirmation
+- 🚀 Deploy-ready for Vercel
+
+---
+
+## 🚀 Deployment
+
+The easiest way to deploy is using [Vercel](https://vercel.com/), the creators of Next.js.
+
+Read more in the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
+
+---
+
+## 📚 Learn More About Next.js
+
+- [📘 Official Docs](https://nextjs.org/docs)
+- [🎓 Interactive Tutorial](https://nextjs.org/learn)
+- [💻 GitHub Repo](https://github.com/vercel/next.js)
+
+---
+
+## 🛠️ Coming Soon
+
+- Role-based access for team members
+- Detailed service history logs
+- Upload feature for rental documents
+
+---
+"""
