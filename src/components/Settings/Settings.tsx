@@ -37,7 +37,7 @@ export const Settings = ({ user, onSave }: SettingsPageProps) => {
         <div className="space-y-6">
           <div className="flex items-center gap-4">
             <img
-              src={editedUser.avatarUrl}
+              src='https://firebasestorage.googleapis.com/v0/b/pet-scouter.appspot.com/o/profile_images%2FN5mM5LujptafskdOWpM7uSv4i2Y2%2F1735404845767.png?alt=media&token=1973659b-ccb1-4daa-a770-ea126bee415c'
               alt="User Avatar"
               className="w-16 h-16 rounded-full"
             />
